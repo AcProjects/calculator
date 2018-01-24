@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+<title>CALUCULATOR</title>
+
+<script language="java script">
+
+function operation(op)
+
+{
+
+var n1,n2,res=0;
+
+n1=parseInt(document.form1.first.value);
+
+n2=parseInt(document.form1.second.value);
+
+switch(op)
+
+{
+
+case '+':
+
+  res=n1+n2;
+
+  break;
+
+case '-':
+
+  res=n1-n2;
+
+  break;
+
+case '*':
+
+  res=n1*n2;
+
+  break;
+
+case '/':
+
+  res=n1/n2;
+
+  break;
+
+}
+
+document.form1.result.value=res;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form name="form1">
+
+<center>
+
+<h1>welcome to javascript</h1>
+
+<table border="1">
+
+<tr>
+
+<td><b>Enter first number:</td>
+
+<td><input type=text name=first size=10></td>
+
+</tr>
+
+<tr>
+
+<td><b>Enter second number:</td>
+
+<td><input type=text name=second size=10></td>
+
+</tr>
+
+<tr>
+
+<td><b>result is</td>
+
+<td><input type=text name=result size=20></b></td>
+
+</tr>
+
+</table>
+
+<br>
+
+<input type=button value="addition" onclick="operation('+')">
+
+<input type=button value="subtraction" onclick="operation('-')">
+
+<input type=button value="multiplication" onclick="operation('*')">
+
+<input type=button value="division" onclick="operation('+')">
+
+</center>
+
+</form>
+
+</body>
+
+</html>

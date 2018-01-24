@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>
+			Ac's Calculator
+		</title>
+		<script type="text/javascript">
+			var n1="";
+			var n2="";
+			var op;
+			var ans;
+			var del= [];
+			var i=0;
+			var s=0;
+			function fun (a)
+			{
+				if(a=='.')
+					s=1;
+				n1=n1+a;
+				del[i]=a;
+				i++;
+				var i1=document.getElementById('i1');
+				i1.value=n1;	
+			}
+			function  op1(t) 
+			{
+				op=t;
+				n2=n1;
+				n1="";
+				i=0;
+				var i1=document.getElementById('i1');
+				i1.value=op;
+			}
+			function eqi ()
+			{
+				if(s==0)
+				{
+					n1=parseInt(n1);
+					n2=parseInt(n2);
+				}
+				else
+				{
+					n1=parseFloat(n1);
+					n2=parseFloat(n2);
+				}
+				var temp;
+				temp=n1;
+				n1=n2;
+				n2=temp;
+				switch(op)
+				{
+
+					case '+':  ans=n1+n2;
+					  		   break;
+					case '-':  ans=n1-n2;
+							   break;
+					case '*':  ans=n1*n2;
+  							   break;
+					case '/':  ans=n1/n2;
+							   break;
+				}
+				var i1=document.getElementById('i1');
+				i1.value=ans;
+				n1=ans;
+			}
+			function res()
+			{
+				ans="";
+				n1="";
+				i=0
+				var i1=document.getElementById('i1');
+				i1.value="";
+				
+			}
+			function del1()
+			{
+				n1="";
+				for(var j=0;j<i-1;j++)
+					n1=n1+del[j];
+				i--;
+				var i1=document.getElementById('i1');
+				i1.value=n1;
+			}
+		</script>
+	</head>
+	<body><center>
+		<table border=1 bgcolor=orange>
+		<tr>
+		<td>		
+		<input id='i1' size="3" placeholder="Enter ur Number"> </br>
+                </td>
+		<td><button onclick="res()">CE</button></td>
+		<td><button onclick="del1()">C</button></td>
+		</tr>
+		</table>
+		<table border=1 bgcolor=orange>
+                <tr>
+		<td><button onclick="fun(7)">7</button></td>
+		<td><button onclick="fun(8)">8</button></td>
+		<td><button onclick="fun(9)">9</button><br></td>
+                <td><button onclick="op1('/')">/</button></td>
+                </tr><tr>
+		<td><button onclick="fun(4)">4</button></td>
+		<td><button onclick="fun(5)">5</button></td>
+		<td><button onclick="fun(6)">6</button><br></td>
+                <td><button onclick="op1('*')">*</button></td>
+                </tr><tr>
+		<td><button onclick="fun(1)">1</button></td>
+		<td><button onclick="fun(2)">2</button></td>
+		<td><button onclick="fun(3)">3</button><br></td>
+               <td> <button onclick="op1('-')">-</button></td>
+                </tr><tr>
+		<td><button onclick="fun('.')">.</button></td>
+               <td>  <button onclick="eqi()">=</button><br></td>
+		<td><button onclick="fun(0)">0</button></td>
+               <td> <button onclick="op1('+')">+</button></td>
+		</tr>		
+		</table>
+		
+		</center>
+	</body>
+</html>

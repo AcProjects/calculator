@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>
+			Ac's Calculator
+		</title>
+		<script type="text/javascript">
+			var n1="";
+			var n2="";
+			var op;
+			var ans;
+			function fun (a)
+			{
+				
+				n1=n1+a;
+				var i1=document.getElementById('i1');
+				i1.value=n1;	
+			}
+			function  op1(t) 
+			{
+				op=t;
+				n2=n1;
+				n1="";
+				var i1=document.getElementById('i1');
+				i1.value=op;
+			}
+			function eqi ()
+			{
+				n1=parseInt(n1);
+				n2=parseInt(n2);
+				var temp;
+				temp=n1;
+				n1=n2;
+				n2=temp;
+				switch(op)
+				{
+
+					case '+':  ans=n1+n2;
+					  		   break;
+					case '-':  ans=n1-n2;
+							   break;
+					case '*':  ans=n1*n2;
+  							   break;
+					case '/':  ans=n1/n2;
+							   break;
+				}
+				var i1=document.getElementById('i1');
+				i1.value=ans;
+				n1=ans;
+			}
+		</script>
+	</head>
+	<body><center>
+		<input id='i1'> </br>
+		<button onclick="fun(7)">7</button>
+		<button onclick="fun(8)">8</button>
+		<button onclick="fun(9)">9</button><br>
+		<button onclick="fun(4)">4</button>
+		<button onclick="fun(5)">5</button>
+		<button onclick="fun(6)">6</button><br>
+		<button onclick="fun(1)">1</button>
+		<button onclick="fun(2)">2</button>
+		<button onclick="fun(3)">3</button><br>
+		<button onclick="op1('+')">+</button>
+		<button onclick="op1('-')">-</button>
+		<button onclick="fun(0)">0</button>
+		<button onclick="op1('*')">*</button>
+		<button onclick="op1('/')">/</button><br>
+		<button onclick="eqi()">=</button><br>
+		
+		</center>
+	</body>
+</html>
